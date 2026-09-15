@@ -1,0 +1,15 @@
+# Personal timetable data
+/schedule.csv
+/课表_按日期.csv
+/release/schedule.csv
+
+# Local previews and diagnostics
+/preview-*.png
+/detail-test-*.png
+/assets/*-check.png
+/debug-*.txt
+*.log
+
+# Build artifacts except the distributable executable
+/release/*
+!/release/向北课表岛.exe
