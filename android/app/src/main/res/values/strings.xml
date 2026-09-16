@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">向北课表岛</string>
+    <string name="recents_service_description">仅观察系统窗口切换，用于进入最近任务时隐藏课表岛；不读取屏幕内容。</string>
+</resources>
