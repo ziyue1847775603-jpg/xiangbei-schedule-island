@@ -13,3 +13,12 @@
 # Build artifacts except the distributable executable
 /release/*
 !/release/向北课表岛.exe
+
+# Android local/build files
+/android/.gradle/
+/android/local.properties
+/android/app/build/
+/android/build/
+/android/test-artifacts/
+*.jks
+*.keystore
