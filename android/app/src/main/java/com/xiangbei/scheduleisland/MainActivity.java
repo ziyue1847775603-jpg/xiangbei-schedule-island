@@ -58,10 +58,10 @@ public class MainActivity extends Activity {
         root.setPadding(dp(22), dp(28), dp(22), dp(32));
         scroll.addView(root, new ScrollView.LayoutParams(-1, -2));
 
-        TextView eyebrow = text("XIANGBEI · MOBILE", 12, Color.rgb(139, 191, 177), true);
+        TextView eyebrow = text("LIMINAL · SCHEDULE ISLAND", 12, Color.rgb(139, 191, 177), true);
         root.addView(eyebrow);
 
-        TextView title = text("向北课表岛", 32, Color.WHITE, true);
+        TextView title = text("Liminal · 课表岛", 32, Color.WHITE, true);
         title.setPadding(0, dp(8), 0, 0);
         root.addView(title);
 
@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
 
         Button recentsWatcher = button("开启最近任务自动隐藏", false);
         recentsWatcher.setOnClickListener(v -> {
-            Toast.makeText(this, "请在已下载/已安装的服务中开启“课表岛最近任务自动隐藏”",
+            Toast.makeText(this, "请在已下载/已安装的服务中开启“Liminal 课表岛最近任务自动隐藏”",
                     Toast.LENGTH_LONG).show();
             startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS));
         });

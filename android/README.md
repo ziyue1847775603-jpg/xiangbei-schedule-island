@@ -1,6 +1,8 @@
-# 向北课表岛 Android 版
+# Liminal · 课表岛 Android 版
 
-原生 Android 悬浮窗版本，目标覆盖 Android 8.0 及以上，以及仍支持安装 APK 的 HarmonyOS 4.x 设备。
+原“向北课表岛”Android 版现已归入 **Liminal** 系列。目标覆盖 Android 8.0 及以上，
+以及仍支持安装 APK 的 HarmonyOS 4.x 设备。应用 ID 保持 `com.xiangbei.scheduleisland`，
+升级后继续使用已有课表、权限和状态。
 
 ## 当前功能
 
@@ -33,7 +35,7 @@
   `canRetrieveWindowContent=false`，不读取页面节点、输入内容或其他应用正文。此项需要用户手动开启，
   不开启时只有“最近任务自动隐藏”不可用，课表岛的其他功能不受影响。
 
-应用不包含网络权限。
+应用不包含网络权限。Liminal 品牌调整不改变辅助服务权限范围。
 
 ## 构建
 

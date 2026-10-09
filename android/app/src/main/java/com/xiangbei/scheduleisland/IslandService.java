@@ -569,7 +569,7 @@ public class IslandService extends Service {
             rightStatus.setText(formatTime(next.start) + "\n" + until);
         } else if (allItems.isEmpty()) {
             headline.setText("没有读到课表数据");
-            subline.setText("打开向北课表岛导入 CSV");
+            subline.setText("打开 Liminal · 课表岛导入 CSV");
             rightStatus.setText("—\n待导入");
         } else {
             headline.setText("本学期课程已结束");
@@ -736,7 +736,7 @@ public class IslandService extends Service {
 
         Notification.Builder builder = new Notification.Builder(this, CHANNEL_ID);
         return builder.setSmallIcon(com.xiangbei.scheduleisland.R.drawable.ic_notification)
-                .setContentTitle("向北课表岛正在显示")
+                .setContentTitle("Liminal · 课表岛正在显示")
                 .setContentText("长按岛可最小化；最近任务中会自动隐藏")
                 .setContentIntent(openPending)
                 .addAction(new Notification.Action.Builder(null, "显示", showPending).build())
