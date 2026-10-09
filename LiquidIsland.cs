@@ -19,10 +19,10 @@ using System.Windows.Media.Effects;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-[assembly: AssemblyTitle("向北课表岛")]
-[assembly: AssemblyProduct("向北课表岛")]
-[assembly: AssemblyDescription("液态玻璃桌面课表灵动岛")]
-[assembly: AssemblyCompany("Xiangbei")]
+[assembly: AssemblyTitle("Liminal · 课表岛")]
+[assembly: AssemblyProduct("Liminal · 课表岛")]
+[assembly: AssemblyDescription("Liminal 系列液态玻璃桌面课表灵动岛")]
+[assembly: AssemblyCompany("Liminal")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
@@ -213,7 +213,7 @@ namespace Xiangbei.LiquidIsland
         {
             _expandAtLaunch = expandAtLaunch;
             _jumpToNextAtLaunch = jumpToNextAtLaunch;
-            Title = "向北课表岛";
+            Title = "Liminal · 课表岛";
             Width = IslandWidth;
             Height = CollapsedHeight;
             MinWidth = IslandWidth;
@@ -412,7 +412,7 @@ namespace Xiangbei.LiquidIsland
             _dataStatus = Text("正在读取数据", 10, FontWeights.Normal, Brush("#A9C1B3"));
             _dataStatus.VerticalAlignment = VerticalAlignment.Center;
             footer.Children.Add(_dataStatus);
-            TextBlock signature = Text("XIANGBEI  ·  LIQUID ISLAND", 9.5, FontWeights.SemiBold, Brush("#6E8C78"));
+            TextBlock signature = Text("LIMINAL  ·  SCHEDULE ISLAND", 9.5, FontWeights.SemiBold, Brush("#6E8C78"));
             signature.VerticalAlignment = VerticalAlignment.Center;
             Grid.SetColumn(signature, 1);
             footer.Children.Add(signature);
@@ -1145,6 +1145,13 @@ namespace Xiangbei.LiquidIsland
             {
                 Application app = new Application { ShutdownMode = ShutdownMode.OnExplicitShutdown };
                 string[] args = Environment.GetCommandLineArgs();
+                if (args.Any(x => string.Equals(x, "--self-test", StringComparison.OrdinalIgnoreCase)))
+                {
+                    string sample = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "schedule.example.csv");
+                    List<ScheduleEntry> entries = ScheduleLoader.Load(sample);
+                    if (entries.Count != 1 || entries[0].Course != "示例课程") Environment.Exit(2);
+                    return;
+                }
                 bool expanded = args.Any(x => string.Equals(x, "--expanded", StringComparison.OrdinalIgnoreCase));
                 bool next = args.Any(x => string.Equals(x, "--next", StringComparison.OrdinalIgnoreCase));
                 LiquidIslandWindow window = new LiquidIslandWindow(expanded, next);
@@ -1154,7 +1161,7 @@ namespace Xiangbei.LiquidIsland
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "向北课表岛启动失败", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.ToString(), "Liminal · 课表岛启动失败", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

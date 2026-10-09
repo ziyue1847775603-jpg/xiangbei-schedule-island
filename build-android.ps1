@@ -46,7 +46,7 @@ $version = [regex]::Match($buildFile, 'versionName\s+"([^"]+)"').Groups[1].Value
 if (-not $version) { throw 'Could not read versionName from app/build.gradle.' }
 $releaseDir = Join-Path $repoRoot 'release'
 New-Item -ItemType Directory -Path $releaseDir -Force | Out-Null
-$releaseApk = Join-Path $releaseDir "Xiangbei-Schedule-Island-Android-$version-debug.apk"
+$releaseApk = Join-Path $releaseDir "Liminal-Schedule-Island-Android-$version.apk"
 Copy-Item -LiteralPath $apk -Destination $releaseApk -Force
 Write-Output "APK=$releaseApk"
 Get-FileHash -LiteralPath $releaseApk -Algorithm SHA256

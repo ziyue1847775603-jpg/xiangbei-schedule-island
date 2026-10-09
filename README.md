@@ -1,6 +1,8 @@
-# 向北课表岛
+# Liminal · 课表岛
 
-Windows WPF 桌面课表灵动岛，直接读取桌面 `向北课表/课表_按日期.csv` 的真实课程数据。
+原“向北课表岛”现已归入 **Liminal** 系列，统一名称为 **Liminal · 课表岛**。Windows WPF
+桌面版直接读取桌面 `向北课表/课表_按日期.csv` 的真实课程数据；Android / HarmonyOS 版保持
+原包名 `com.xiangbei.scheduleisland`，可覆盖升级并保留已导入课表和悬浮岛状态。
 
 仓库同时包含 `android/` 下的原生 Android / HarmonyOS 4.x APK 版本；移动端支持长按快捷菜单、
 圆钮最小化、回到今天、状态恢复及最近任务自动隐藏。移动端说明见 `android/README.md`。
@@ -15,7 +17,8 @@ Windows WPF 桌面课表灵动岛，直接读取桌面 `向北课表/课表_按�
 
 ## 运行
 
-直接运行 `release/向北课表岛.exe`。单击顶部灵动岛展开或收起，展开后左键点击课程卡片查看详情。
+直接运行 `release/Liminal.ScheduleIsland.exe`。为兼容旧快捷方式，构建时仍生成同内容的
+`release/向北课表岛.exe`。单击顶部灵动岛展开或收起，展开后左键点击课程卡片查看详情。
 
 程序优先读取桌面 `向北课表/课表_按日期.csv`，其次读取程序目录中的 `schedule.csv`。真实课表不会提交到仓库；`schedule.example.csv` 提供了字段格式示例。
 
@@ -27,4 +30,6 @@ Windows WPF 桌面课表灵动岛，直接读取桌面 `向北课表/课表_按�
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
-构建结果位于 `release/向北课表岛.exe`，并嵌入 `assets/xiangbei-schedule-island.ico`。构建脚本会优先复制本地 `schedule.csv`；如果不存在，则使用不含个人信息的 `schedule.example.csv`。
+构建结果位于 `release/Liminal.ScheduleIsland.exe`，并嵌入
+`assets/xiangbei-schedule-island.ico`。构建脚本会优先复制本地 `schedule.csv`；如果不存在，
+则使用不含个人信息的 `schedule.example.csv`。Liminal 公共发布流程只打包示例数据，不包含私人课表。
